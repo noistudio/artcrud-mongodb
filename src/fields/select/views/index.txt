@@ -1,0 +1,1 @@
+ <td>@if(isset($row->[name]["[data_title]"])) {{  $row->[name]["[data_title]"] }} @endif</td>

@@ -1,0 +1,27 @@
+$val_[name]=$request->post("[name]");
+$result_[name]=null;
+if(isset($val_[name]) and is_numeric($val_[name])){
+$result_[name]=[data_model]::query()->where('last_id',(int)$val_[name])->first();
+if($result_[name]){
+ $[name_table_little]->[name]=$result_[name]->toArray();
+}
+
+}
+if(!$result_[name]){
+    return response()->json(['errors' => ['[name]' => ['Необходимо выбрать']]], 422);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

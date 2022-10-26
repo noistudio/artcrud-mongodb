@@ -1,0 +1,8 @@
+  <td>
+  @if(isset($row->[name]) and is_array($row->[name]) and count($row->[name]))
+        @foreach($row->[name] as $cur_val)
+        <b>{{ $cur_val["[data_title]"]  }}</b>,
+        @endforeach
+  @endif
+  </td>
+

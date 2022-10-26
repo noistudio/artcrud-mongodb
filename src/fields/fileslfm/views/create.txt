@@ -1,0 +1,16 @@
+<div class="col-xs-12 col-sm-12 col-md-12 mb-2 mt-2 row">
+                <div class="col-4">
+                    <strong>[field.title]:</strong>
+                </div>
+                <div class="col-7">
+
+            <a href="#" data-title="[field.title]" class="btn btn-danger files_lms_add crud_field_[name] " data-field="[name]" >Добавить файл</a>
+
+<p>Файлы:</p>
+<ul class="files_list_[name]">
+
+</ul>
+
+                </div>
+</div>
+

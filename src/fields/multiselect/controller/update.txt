@@ -1,0 +1,11 @@
+$val_[name]=$request->post("[name]");
+$result_[name]=[];
+if(isset($val_[name]) and is_array($val_[name]) and count($val_[name])>0){
+  foreach($val_[name] as $val_id){
+  $tmp_val=[data_model]::query()->where('last_id',(int)$val_id)->first();
+  if($tmp_val){
+  $result_[name]['id_'.$tmp_val->last_id]=["last_id"=>$tmp_val->last_id,"[data_title]"=>$tmp_val->[data_title]];
+  }
+  }
+}
+$[name_table_little]->[name]=$result_[name];
