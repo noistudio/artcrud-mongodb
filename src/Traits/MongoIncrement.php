@@ -9,7 +9,7 @@ trait MongoIncrement
     public function nextid()
     {
         // ref is the counter - change it to whatever you want to increment
-        $this->last_id = self::getID();
+        $this->last_id = self::getID($this->collection);
     }
 
     public static function bootUseAutoIncrementID()
@@ -23,10 +23,11 @@ trait MongoIncrement
         return $this->casts;
     }
 
-    private static function getID()
+    private static function getID($collection="ref")
     {
+
         $seq = \DB::connection('mongodb')->getCollection('counters')->findOneAndUpdate(
-            ['ref' => 'ref'],
+            ['ref' => $collection],
             ['$inc' => ['seq' => 1]],
             ['new' => true, 'upsert' => true, 'returnDocument' => FindOneAndUpdate::RETURN_DOCUMENT_AFTER]
         );
