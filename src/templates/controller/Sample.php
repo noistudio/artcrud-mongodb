@@ -98,6 +98,7 @@ class [name_table]Controller extends Controller
     }
     $new_obj=$[name_table_little]->replicate();
     $new_obj->save();
+    $new_obj->nextid();    
     $new_obj->sort=$new_obj->last_id;
     $new_obj->save();
 
